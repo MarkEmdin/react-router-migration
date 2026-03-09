@@ -6,8 +6,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { ThemeProvider } from "@rescui/ui-contexts";
 
 import "./app.css";
+import Header from "./components/ktlComponent/header";
+import Footer from "./components/ktlComponent/footer";
 
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -41,7 +44,13 @@ export function Layout({ children }) {
 }
 
 export default function App() {
-  return <Outlet />;
+    return (
+    <ThemeProvider theme="dark">
+      <Header/>
+      <Outlet />
+      <Footer />
+    </ThemeProvider>
+  );
 }
 
 export function ErrorBoundary({ error }) {

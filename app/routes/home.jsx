@@ -1,10 +1,12 @@
-export function meta() {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+import { ThemeProvider } from '@rescui/ui-contexts';
+import { UsageSection } from '../sections/usageSection';
 
 export default function Home() {
-  return <></>;
+  return (
+    <ThemeProvider theme="dark">
+      <div>
+        <UsageSection />
+      </div>
+    </ThemeProvider>
+  );
 }
