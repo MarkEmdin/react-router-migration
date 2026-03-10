@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Button } from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
 import { cardCn } from '@rescui/card';
@@ -12,8 +13,12 @@ import { Container, Section } from '../../components/layout';
 
 export function HeaderSection() {
   const textCn = useTextStyles();
+  const [isMobile, setIsMobile] = useState(false);
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   const visibleCards = isMobile ? cardsData.slice(0, 2) : cardsData;
 
   return (
