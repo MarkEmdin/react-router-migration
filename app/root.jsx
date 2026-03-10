@@ -21,7 +21,7 @@ export const links = () => [
   },
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
+    href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap',
   },
   { rel: 'dns-prefetch', href: '//resources.jetbrains.com' },
   { rel: 'icon', type: 'image/svg+xml', href: '/images/favicon.svg' },
