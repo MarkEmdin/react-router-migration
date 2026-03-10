@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from 'react-router';
 import { ThemeProvider } from '@rescui/ui-contexts';
+import './css/styles-v2.scss';
 
 import Header from './components/ktlComponent/header';
 import Footer from './components/ktlComponent/footer';
