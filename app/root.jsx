@@ -5,24 +5,31 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
-import { ThemeProvider } from "@rescui/ui-contexts";
+} from 'react-router';
+import { ThemeProvider } from '@rescui/ui-contexts';
 
-import "./app.css";
-import Header from "./components/ktlComponent/header";
-import Footer from "./components/ktlComponent/footer";
+import './app.css';
+import Header from './components/ktlComponent/header';
+import Footer from './components/ktlComponent/footer';
 
 export const links = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com',
+    crossOrigin: 'anonymous',
   },
   {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
+  { rel: 'dns-prefetch', href: '//resources.jetbrains.com' },
+  { rel: 'icon', type: 'image/svg+xml', href: '/images/favicon.svg' },
+  { rel: 'alternate icon', href: '/images/favicon.ico' },
+  { rel: 'apple-touch-icon', href: '/images/apple-touch-icon.png' },
+  { rel: 'apple-touch-icon', sizes: '72x72', href: '/images/apple-touch-icon-72x72.png' },
+  { rel: 'apple-touch-icon', sizes: '114x114', href: '/images/apple-touch-icon-114x114.png' },
+  { rel: 'apple-touch-icon', sizes: '144x144', href: '/images/apple-touch-icon-144x144.png' },
 ];
 
 export function Layout({ children }) {
@@ -44,9 +51,9 @@ export function Layout({ children }) {
 }
 
 export default function App() {
-    return (
+  return (
     <ThemeProvider theme="dark">
-      <Header/>
+      <Header />
       <Outlet />
       <Footer />
     </ThemeProvider>
@@ -54,16 +61,14 @@ export default function App() {
 }
 
 export function ErrorBoundary({ error }) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
+  let message = 'Oops!';
+  let details = 'An unexpected error occurred.';
   let stack;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
+    message = error.status === 404 ? '404' : 'Error';
     details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+      error.status === 404 ? 'The requested page could not be found.' : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
