@@ -8,7 +8,7 @@ import {
 } from 'react-router';
 import { ThemeProvider } from '@rescui/ui-contexts';
 import './css/styles-v2.scss';
-
+import '@rescui/typography/lib/font-jb-sans-auto.css';
 import Header from './components/ktlComponent/header';
 import Footer from './components/ktlComponent/footer';
 
@@ -19,11 +19,7 @@ export const links = () => [
     href: 'https://fonts.gstatic.com',
     crossOrigin: 'anonymous',
   },
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap',
-  },
-  { rel: 'dns-prefetch', href: '//resources.jetbrains.com' },
+  { rel: 'preconnect', href: '//resources.jetbrains.com' },
   { rel: 'icon', type: 'image/svg+xml', href: '/images/favicon.svg' },
   { rel: 'alternate icon', href: '/images/favicon.ico' },
   { rel: 'apple-touch-icon', href: '/images/apple-touch-icon.png' },
